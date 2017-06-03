@@ -20,7 +20,8 @@ const webpackConfig = {
                 loaders: ['babel-loader']
             }, {
                 test: /\.css$/,
-                use: 'css-loader',
+                // use: 'css-loader',
+                loader: 'style-loader!css-loader',
                 include: /flexboxgrid/
              }, {
                 test: /\.(woff|woff2|ttf|svg|eot|png|jpg)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,

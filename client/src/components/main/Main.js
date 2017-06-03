@@ -3,7 +3,11 @@ import React from 'react';
 export default class Main extends React.Component {
   render() {
     return (
-        <div>main page</div>
+      <div>
+          <div className="">
+            
+          </div>
+      </div>
     );
   }
 }

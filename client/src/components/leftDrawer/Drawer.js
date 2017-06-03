@@ -3,6 +3,7 @@ import Drawer from 'material-ui/Drawer';
 import Avatar from 'material-ui/Avatar';
 import ListItem from 'material-ui/List/ListItem';
 import {Link } from 'react-router-dom';
+import './Drawer.scss';
 
 export default class DrawerSimpleExample extends React.Component {
 
@@ -29,17 +30,17 @@ export default class DrawerSimpleExample extends React.Component {
               Image Avatar
               </ListItem>
             </Link>
-            <Link className="menu-link" to="/profile">
+            <Link className="menu-link" to="">
               <ListItem onTouchTap={this.handleClose.bind(this)}>
-                News
+                Main
               </ListItem>
             </Link>
-            <Link className="menu-link" to="/profile">
+            <Link className="menu-link" to="/project">
               <ListItem onTouchTap={this.handleClose.bind(this)}>
                 Projects
               </ListItem>
             </Link>
-            <Link className="menu-link" to="/profile">
+            <Link className="menu-link" to="/news">
               <ListItem onTouchTap={this.handleClose.bind(this)}>
                 News
               </ListItem>
