@@ -3,7 +3,8 @@ import Header from './Header';
 import Drawer from './leftDrawer/Drawer';
 import Main from './main/Main';
 import Profile from './profile/Profile';
-import Registration from './registrWin/Registration';
+import LogInForm from './logIn/LogInForm';
+import LogUpForm from './logUp/LogUpForm';
 import { HashRouter, Route, Link } from 'react-router-dom';
 
 export default class Content extends React.Component {
@@ -16,7 +17,7 @@ export default class Content extends React.Component {
 		this.setState({open: !this.drawerState.open});
 		this.drawerState.open = !this.drawerState.open;
 	}
-  
+
   render() {
 		return (
       <HashRouter>
@@ -25,7 +26,8 @@ export default class Content extends React.Component {
           <Drawer drawerState={this.drawerState}/>
           <Route path='/' component={Main} />
           <Route path='/profile' component={Profile} />
-          <Route path='/registr' component={Registration} />
+          <Route path='/logIn' component={LogInForm} />
+          <Route path='/logUp' component={LogUpForm} />
         </div>
       </HashRouter>
     );
