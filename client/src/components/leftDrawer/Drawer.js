@@ -1,8 +1,7 @@
 import React from 'react';
-import Drawer from 'material-ui/Drawer';
-import Avatar from 'material-ui/Avatar';
-import ListItem from 'material-ui/List/ListItem';
-import {Link } from 'react-router-dom';
+import { Drawer, Avatar, List, ListItem } from 'material-ui';
+import { Grid,Row,Col } from 'react-flexbox-grid';
+import { Link } from 'react-router-dom';
 import './Drawer.scss';
 
 export default class DrawerSimpleExample extends React.Component {
@@ -12,39 +11,57 @@ export default class DrawerSimpleExample extends React.Component {
     this.props.drawerState.open = !this.props.drawerState.open;
   }
   render() {
+    var imageStyle = {
+      backgroundImage: 'url(' + 'https://pp.userapi.com/c637921/v637921451/4afed/YQLjcdSzWyU.jpg' + ')'
+    };
     return (
       <div>
           <Drawer
             docked={false}
             open={this.props.drawerState.open}
-            containerStyle={{'position': 'absolute', 'top': '64px'}}
             onRequestChange={this.handleClose.bind(this)}
-          >
-            <Link className="menu-link" to="/profile">
-              <ListItem
-                onTouchTap={this.handleClose.bind(this)}
-                leftAvatar={
-                  <Avatar src="https://pp.userapi.com/c638029/v638029957/441c/US2iWHCXtH4.jpg" />
-                }
-              >
-              Image Avatar
+            >
+            <List>
+              <Link to="/profile">
+                <ListItem className="menu-link"
+                          onTouchTap={this.handleClose.bind(this)}>
+                      <Row middle="xs">
+                        <Col xs={4}><Avatar size={60} src='https://pp.userapi.com/c637921/v637921451/4afed/YQLjcdSzWyU.jpg'/></Col>
+                        <Col xs={8}>Владислав Жевняк</Col>
+                      </Row>
+                </ListItem>
+              </Link>
+            <Link to="/main">
+              <ListItem className="menu-link"
+                        onTouchTap={this.handleClose.bind(this)}>
+                <Row center="xs">
+                  <Col xs={12}>Main</Col>
+                </Row>
               </ListItem>
             </Link>
-            <Link className="menu-link" to="">
-              <ListItem onTouchTap={this.handleClose.bind(this)}>
-                Main
+            <Link to="/project">
+              <ListItem className="menu-link"
+                        onTouchTap={this.handleClose.bind(this)}>
+                <Row center="xs">
+                  <Col xs={12}>Projects</Col>
+                </Row>
               </ListItem>
             </Link>
-            <Link className="menu-link" to="/project">
-              <ListItem onTouchTap={this.handleClose.bind(this)}>
-                Projects
+            <Link  to="/news">
+              <ListItem className="menu-link"
+                        onTouchTap={this.handleClose.bind(this)}>
+                <Row center="xs">
+                  <Col xs={12}>News</Col>
+                </Row>
               </ListItem>
             </Link>
-            <Link className="menu-link" to="/news">
-              <ListItem onTouchTap={this.handleClose.bind(this)}>
-                News
+              <ListItem className="menu-link"
+                        onTouchTap={this.handleClose.bind(this)}>
+                <Row center="xs">
+                  <Col xs={12}>Settings </Col>
+                </Row>
               </ListItem>
-            </Link>
+            </List>
           </Drawer>
       </div>
     );

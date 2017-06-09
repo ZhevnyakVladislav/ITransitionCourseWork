@@ -5,6 +5,7 @@ import Main from './main/Main';
 import Profile from './profile/Profile';
 import LogInForm from './logIn/LogInForm';
 import LogUpForm from './logUp/LogUpForm';
+import News from './news/News';
 import { HashRouter, Route, Link } from 'react-router-dom';
 
 export default class Content extends React.Component {
@@ -24,10 +25,11 @@ export default class Content extends React.Component {
         <div>
           <Header showDrawer={this.leftButtonTouch.bind(this)}/>
           <Drawer drawerState={this.drawerState}/>
-          <Route path='/' component={Main} />
+          <Route path='/main' component={Main} />
           <Route path='/profile' component={Profile} />
           <Route path='/logIn' component={LogInForm} />
           <Route path='/logUp' component={LogUpForm} />
+          <Route path='/news' component={News} />
         </div>
       </HashRouter>
     );

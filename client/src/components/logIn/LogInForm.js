@@ -2,15 +2,12 @@ import React from 'react';
 import { TextField }  from 'redux-form-material-ui';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Grid,Row,Col} from 'react-flexbox-grid';
-import {Link } from 'react-router-dom';
 import './LogInForm.scss';
 
 export default class LogInForm extends React.Component {
   constructor(props){
     super(props);
     this.errors  = {};
-  }
-  validData(){
   }
   render() {
     return (
